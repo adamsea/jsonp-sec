@@ -1,0 +1,29 @@
+{
+  "name": "jsonp-sec",
+  "version": "0.0.1",
+  "description": "A more secure way to make JSONP calls using Web Workers.",
+  "main": "jsonp-sec.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-qunit": "~0.3.0",
+    "grunt-contrib-jshint": "~0.7.2"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adamsea/jsonp-sec.git"
+  },
+  "author": "Eric Adams",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "fdce4643db47439b842a6dabd25bee978709243d",
+  "bugs": {
+    "url": "https://github.com/adamsea/jsonp-sec/issues"
+  }
+}

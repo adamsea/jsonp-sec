@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<title>QUnit Test Suite</title>
+
+	<!-- QUnit styles -->
+	<link rel="stylesheet" href="../../bower_components/qunit/qunit/qunit.css">
+</head>
+
+<body>
+	<!-- QUnit stucture -->
+	<div class="dataset-test">
+		<h1 id="qunit-header">QUnit Test Suite</h1>
+		<h2 id="qunit-banner"></h2>
+		<h2 id="qunit-userAgent"></h2>
+		<ol id="qunit-tests"></ol>
+	</div>
+
+	<!-- QUnit fixture -->
+	<div id="qunit-fixture"></div>
+
+	<!-- Testing libs -->
+	<script src="../../bower_components/qunit/qunit/qunit.js"></script>
+	<script src="../../bower_components/sinonjs/sinon.js"></script>
+	<script src="../../bower_components/sinon-qunit/lib/sinon-qunit.js"></script>
+
+	<!-- Application libs -->
+	<script src="../../bower_components/operative/dist/operative.js"></script>
+
+	<!-- Declare your files to be tested -->
+	<script src="../../jsonp-sec.js"></script>
+	<script src="tests/jsonp-sec.js"></script>
+</body>
+</html>

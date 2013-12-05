@@ -1,0 +1,31 @@
+{
+  "name": "jsonp-sec",
+  "version": "0.0.1",
+  "homepage": "https://github.com/adamsea/jsonp-sec",
+  "authors": [
+    "Eric Adams <eadams@synacor.com>"
+  ],
+  "description": "A more secure way to make JSONP calls using Web Workers",
+  "main": "jsonp-sec.js",
+  "keywords": [
+    "jsonp",
+    "cross-domain"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "operative": "~0.3.0"
+  },
+  "devDependencies": {
+    "qunit": "~1.12.0",
+    "sinon-qunit": "~1.0.0",
+    "sinonjs": "~1.7.3"
+  }
+}
