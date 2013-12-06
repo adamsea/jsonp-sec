@@ -9,19 +9,18 @@
 (function(global) {
 
 	/**
-	 * Make a secure JSONP request.
+	 * Make a secure JSONP request, within the context of the web worker thread.
+	 * This will use importScripts, so you must have a solution defined in the
+	 * degraded iframe state that works with traditional JSONP <script> tags.
 	 * @param {Object} options The options to use
 	 * @param {String} options.url The url for the request
 	 * @param {String} options.callbackParam The name of the callback function (will be executed in the global scope)
-	 * @param {Function} options.success The success handler
-	 * @param {Function} options.error The error handler
+	 * @param {Function} callback The callback to respond to
 	 * @return {Null}
 	 */
-	var JSONPsec = function(options) {
+	var JSONPsec = operative(function(options, callback) {
 		var url, script,
-			callbackParam = 'callback',
-			success = function() {},
-			error = function() {};
+			callbackParam = 'callback';
 
 			// Bail if we have no options
 			if (!(options && options.url)) {
@@ -31,21 +30,16 @@
 			// Set up options for the request
 			url = options.url;
 			callbackParam = options.callbackParam || callbackParam;
-			success = (typeof options.success === 'function') && options.success || success;
-			error = (typeof options.error === 'function') && options.error || error;
 
 			// Set up callback param and create the script tag
 			url += (url.indexOf('?') !== -1 && '&' || '?') + callbackParam + '=cb';
-			script = document.createElement('script');
-			script.src = url;
-			script.async = true;
 
 			// Set callback
-			global[callbackParam] = success;
+			this[callbackParam] = callback;
 
 			// Make the request
-			document.documentElement.appendChild(script);
-		};
+			importScripts(url);
+		});
 
 	global.JSONPsec = JSONPsec;
 
