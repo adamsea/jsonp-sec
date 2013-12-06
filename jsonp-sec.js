@@ -37,10 +37,28 @@
 			// Set callback
 			this[callbackParam] = callback;
 
+			// Define importScripts for the degraded experience
+			if (!importScripts) {
+				this.importScripts = function(url) {
+					var script = document.createElement('script');
+					script.async = true;
+					script.src = url;
+					document.documentElement.appendChild(script);
+				};
+			}
+
 			// Make the request
 			importScripts(url);
 		});
 
-	global.JSONPsec = JSONPsec;
+	// Expose the api
+	if (typeof define !== 'undefined' && define.amd) {
+		define([], function() {
+			return JSONPsec;
+		});
+	}
+	else {
+		global.JSONPsec = JSONPsec;
+	}
 
 }(this));
