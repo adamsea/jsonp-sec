@@ -37,19 +37,20 @@
 			// Set callback
 			this[callbackParam] = callback;
 
-			// Define importScripts for the degraded experience
-			if (!importScripts) {
-				this.importScripts = function(url) {
+			// Make the request
+			try {
+				importScripts(url);
+			}
+			// Append script in the degraded experience
+			catch (err) {
+				(function(url) {
 					var doc = document.body || document.documentElement,
 						script = document.createElement('script');
 					script.async = true;
 					script.src = url;
 					doc.appendChild(script);
-				};
+				}(url));
 			}
-
-			// Make the request
-			importScripts(url);
 		});
 
 	// Expose the api
