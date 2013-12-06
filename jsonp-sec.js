@@ -40,10 +40,11 @@
 			// Define importScripts for the degraded experience
 			if (!importScripts) {
 				this.importScripts = function(url) {
-					var script = document.createElement('script');
+					var doc = document.body || document.documentElement,
+						script = document.createElement('script');
 					script.async = true;
 					script.src = url;
-					document.documentElement.appendChild(script);
+					doc.appendChild(script);
 				};
 			}
 
