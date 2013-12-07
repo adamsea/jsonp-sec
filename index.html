@@ -15,7 +15,10 @@
 		<div id="results"></div>
 
 		<script>
-			// Create the jsonp request
+			// Make a secure JSONP Request
+			JSONPsec({ url: 'http://ip.jsontest.com/' }, function(res) {
+				console.dir(res);
+			});
 		</script>
 	</body>
 </html>

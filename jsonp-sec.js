@@ -20,7 +20,7 @@
 	 */
 	var JSONPsec = operative(function(options, callback) {
 		var url, script,
-			callbackParam = 'callback';
+			cbParam = 'callback';
 
 			// Bail if we have no options
 			if (!(options && options.url)) {
@@ -29,13 +29,13 @@
 
 			// Set up options for the request
 			url = options.url;
-			callbackParam = options.callbackParam || callbackParam;
+			cbParam = options.callbackParam || cbParam;
 
 			// Set up callback param and create the script tag
-			url += (url.indexOf('?') !== -1 && '&' || '?') + callbackParam + '=cb';
+			url += (url.indexOf('?') !== -1 && '&' || '?') + cbParam + '=_' + cbParam;
 
 			// Set callback
-			this[callbackParam] = callback;
+			this['_' + cbParam] = callback;
 
 			// Make the request
 			try {
