@@ -48,6 +48,7 @@
 						script = document.createElement('script');
 					script.async = true;
 					script.src = url;
+					document.domain = document.domain;
 					doc.appendChild(script);
 				}(url));
 			}
