@@ -17,6 +17,21 @@ module.exports = function(grunt) {
 		// QUnit test runner
 		qunit: {
 			all: ["test/qunit/index.html"]
+		},
+
+		// YUIDoc task
+		yuidoc: {
+			compile: {
+				name: '<%= pkg.name %>',
+				description: '<%= pkg.name %>',
+				version: '<%= pkg.version %>',
+				url: '<%= pkg.homepage %>',
+				options: {
+					exclude: 'bower_components,node_modules,test,vendor',
+					paths: './',
+					outdir: 'docs/'
+				}
+			}
 		}
 
 	});
@@ -27,5 +42,6 @@ module.exports = function(grunt) {
 	// Load npm modules for tasks
 	grunt.loadNpmTasks("grunt-contrib-qunit");
 	grunt.loadNpmTasks("grunt-contrib-jshint");
+	grunt.loadNpmTasks("grunt-contrib-yuidoc");
 
 };

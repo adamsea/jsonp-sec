@@ -1,0 +1,124 @@
+{
+    "project": {
+        "name": "jsonp-sec",
+        "description": "jsonp-sec",
+        "version": "0.0.1",
+        "url": ""
+    },
+    "files": {
+        "jsonp-sec.js": {
+            "name": "jsonp-sec.js",
+            "modules": {
+                "JSONPSec": 1
+            },
+            "classes": {
+                "JSONPSec": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "unsec.js": {
+            "name": "unsec.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {
+        "JSONPSec": {
+            "name": "JSONPSec",
+            "submodules": {},
+            "classes": {
+                "JSONPSec": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "jsonp-sec.js",
+            "line": 1,
+            "description": "JSONP-sec uses spawned web workers to\ninsulate the current UI thread and DOM\nfrom potential attacks from JSONP requests.\nThis is not meant to be a replacement for\na reasonable CORS setup, only when you do\nnot have access to the server returning data."
+        }
+    },
+    "classes": {
+        "JSONPSec": {
+            "name": "JSONPSec",
+            "shortname": "JSONPSec",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "JSONPSec",
+            "namespace": "",
+            "file": "jsonp-sec.js",
+            "line": 1,
+            "description": "JSONP-sec uses spawned web workers to\ninsulate the current UI thread and DOM\nfrom potential attacks from JSONP requests.\nThis is not meant to be a replacement for\na reasonable CORS setup, only when you do\nnot have access to the server returning data."
+        }
+    },
+    "classitems": [
+        {
+            "file": "jsonp-sec.js",
+            "line": 13,
+            "description": "Make a secure JSONP request, within the context of the web worker thread.\nThis will use importScripts, so you must have a solution defined in the\ndegraded iframe state that works with traditional JSONP <script> tags.",
+            "class": "JSONPSec",
+            "module": "JSONPSec"
+        },
+        {
+            "file": "jsonp-sec.js",
+            "line": 20,
+            "itemtype": "method",
+            "name": "JSONPSec",
+            "params": [
+                {
+                    "name": "options",
+                    "description": "The options to use",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "url",
+                            "description": "The url for the request",
+                            "type": "String"
+                        },
+                        {
+                            "name": "callbackParam",
+                            "description": "The name of the callback function (will be executed in the global scope)",
+                            "type": "String",
+                            "optional": true,
+                            "optdefault": "callback"
+                        }
+                    ]
+                },
+                {
+                    "name": "callback",
+                    "description": "The callback to respond to",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "No data to return, the callback will receive the response",
+                "type": "Null"
+            },
+            "static": 1,
+            "class": "JSONPSec",
+            "module": "JSONPSec"
+        },
+        {
+            "file": "unsec.js",
+            "line": 1,
+            "description": "Note: Try this test file in IE8 & IE9.\nScript access should be blocked.",
+            "class": "",
+            "module": "JSONPSec"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "Missing item type\nMake a secure JSONP request, within the context of the web worker thread.\nThis will use importScripts, so you must have a solution defined in the\ndegraded iframe state that works with traditional JSONP <script> tags.",
+            "line": " jsonp-sec.js:13"
+        },
+        {
+            "message": "Missing item type\nNote: Try this test file in IE8 & IE9.\nScript access should be blocked.",
+            "line": " unsec.js:1"
+        }
+    ]
+}

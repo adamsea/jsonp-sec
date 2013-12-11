@@ -5,6 +5,8 @@
  * This is not meant to be a replacement for
  * a reasonable CORS setup, only when you do
  * not have access to the server returning data.
+ * @module JSONPSec
+ * @class JSONPSec
  */
 (function(global) {
 
@@ -12,15 +14,21 @@
 	 * Make a secure JSONP request, within the context of the web worker thread.
 	 * This will use importScripts, so you must have a solution defined in the
 	 * degraded iframe state that works with traditional JSONP <script> tags.
-	 * @param {Object} options The options to use
-	 * @param {String} options.url The url for the request
-	 * @param {String} options.callbackParam The name of the callback function (will be executed in the global scope)
-	 * @param {Function} callback The callback to respond to
-	 * @return {Null}
 	 */
-	var JSONPsec = operative(function(options, callback) {
-		var url, script,
-			cbParam = 'callback';
+	var JSONPsec = operative(
+
+		/**
+		 * @method JSONPSec
+		 * @param {Object} options The options to use
+		 * @param {String} options.url The url for the request
+		 * @param {String} [options.callbackParam=callback] The name of the callback function (will be executed in the global scope)
+		 * @param {Function} callback The callback to respond to
+		 * @return {Null} No data to return, the callback will receive the response
+		 * @static
+		 */
+		function(options, callback) {
+			var url, script,
+				cbParam = 'callback';
 
 			// Bail if we have no options
 			if (!(options && options.url)) {
@@ -52,7 +60,9 @@
 					doc.appendChild(script);
 				}(url));
 			}
-		});
+		}
+
+	);
 
 	// Expose the api
 	if (typeof define !== 'undefined' && define.amd) {
