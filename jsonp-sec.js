@@ -5,8 +5,8 @@
  * This is not meant to be a replacement for
  * a reasonable CORS setup, only when you do
  * not have access to the server returning data.
- * @module JSONPSec
- * @class JSONPSec
+ * @module JSONPsec
+ * @class JSONPsec
  */
 (function(global) {
 
@@ -18,7 +18,7 @@
 	var JSONPsec = operative(
 
 		/**
-		 * @method JSONPSec
+		 * @method JSONPsec
 		 * @param {Object} options The options to use
 		 * @param {String} options.url The url for the request
 		 * @param {String} [options.callbackParam=callback] The name of the callback function (will be executed in the global scope)

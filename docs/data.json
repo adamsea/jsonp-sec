@@ -9,10 +9,10 @@
         "jsonp-sec.js": {
             "name": "jsonp-sec.js",
             "modules": {
-                "JSONPSec": 1
+                "JSONPsec": 1
             },
             "classes": {
-                "JSONPSec": 1
+                "JSONPsec": 1
             },
             "fors": {},
             "namespaces": {}
@@ -26,11 +26,11 @@
         }
     },
     "modules": {
-        "JSONPSec": {
-            "name": "JSONPSec",
+        "JSONPsec": {
+            "name": "JSONPsec",
             "submodules": {},
             "classes": {
-                "JSONPSec": 1
+                "JSONPsec": 1
             },
             "fors": {},
             "namespaces": {},
@@ -41,15 +41,15 @@
         }
     },
     "classes": {
-        "JSONPSec": {
-            "name": "JSONPSec",
-            "shortname": "JSONPSec",
+        "JSONPsec": {
+            "name": "JSONPsec",
+            "shortname": "JSONPsec",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "JSONPSec",
+            "module": "JSONPsec",
             "namespace": "",
             "file": "jsonp-sec.js",
             "line": 1,
@@ -61,14 +61,14 @@
             "file": "jsonp-sec.js",
             "line": 13,
             "description": "Make a secure JSONP request, within the context of the web worker thread.\nThis will use importScripts, so you must have a solution defined in the\ndegraded iframe state that works with traditional JSONP <script> tags.",
-            "class": "JSONPSec",
-            "module": "JSONPSec"
+            "class": "JSONPsec",
+            "module": "JSONPsec"
         },
         {
             "file": "jsonp-sec.js",
             "line": 20,
             "itemtype": "method",
-            "name": "JSONPSec",
+            "name": "JSONPsec",
             "params": [
                 {
                     "name": "options",
@@ -100,15 +100,15 @@
                 "type": "Null"
             },
             "static": 1,
-            "class": "JSONPSec",
-            "module": "JSONPSec"
+            "class": "JSONPsec",
+            "module": "JSONPsec"
         },
         {
             "file": "unsec.js",
             "line": 1,
             "description": "Note: Try this test file in IE8 & IE9.\nScript access should be blocked.",
             "class": "",
-            "module": "JSONPSec"
+            "module": "JSONPsec"
         }
     ],
     "warnings": [
